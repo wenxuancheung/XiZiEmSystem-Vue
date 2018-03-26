@@ -48,8 +48,7 @@ export default {
 	    	item_food : "",
 	    	food_items :[],
 	    	show_food : "",
-	    	food_name : "",
-	    	i : 0
+	    	food_name : ""
 	     // msg: 'Welcome to Your Vue.js App'
 	    }
 	},
@@ -180,8 +179,8 @@ export default {
 							x = name.length-1;
 							rand = parseInt(Math.random() * (x - y + 1) + y)
 							this.show_food = name[rand]+" "+this.item_food
-							this.food_items[this.i] = this.show_food
-							this.i++
+              this.food_items.push(this.show_food)
+							this.$set(this.$data,'food_items',this.food_items)
 						}
 					}
 				}
